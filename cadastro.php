@@ -52,7 +52,7 @@ if(isset($_POST['nome']) || isset($_POST['datanasc']) || isset($_POST['cpf']) ||
 
     <form action="" method="POST">
     <div>
-        <label for=""> Nome completo
+        <label for=""> Seu Nome completo
             <input type="text" name="nome" id="nome">
         </label>
         <label for=""> data de nascimento
