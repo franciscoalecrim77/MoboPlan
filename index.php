@@ -51,32 +51,29 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Oficial</title>
+    <title>Login</title>
     <link rel="icon" href="img/icone.png">
     <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="titulo" id="titulo">Sistema de planejamento financeiro</div>
+    <section class="area-login">
+        <div class="login">
+            <div>
+                <img src="" alt="">
+            </div>
         
-    <form action="" method="post" class="login" id="login">
-        <div class="conect" id="conect">
-        <label>Email</label>
-        <input type="email" name="email" id="email">
-        <Br></Br>
-        <label>Senha</label>
-        <input type="password" name="senha" id="senha"> 
-        </div>
-        <Br></Br>
-        <label>Clique aqui para logar</label>
-        <input type="submit" value="Login">
 
-        <div>
-            <label for=""><a href="cadastro.php"> Não é cadastrado? clique aqui</a> </label>
-            <a href="cadastro.php"> </a>
+            <form action="" method="post">
+            <input type="email" name="email" placeholder="E-mail" autofocus>
+            <input type="password" name="senha" placeholder="Digite a sua senha">
+            <input type="submit" value="Login">
+            </form>
+
+        <p>Não é cadastrado? <a href="cadastro.php">Clique aqui</a></p>
+                
         </div>
-    </form>
-    
+    </section>
 </body>
 </html>
 
