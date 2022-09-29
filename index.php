@@ -57,7 +57,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
 </head>
 
 <body>
-    <div class="titulo" id="titulo"> teste teste teste testeSistema de planejamento financeiro</div>
+    <div class="titulo" id="titulo">Sistema de planejamento financeiro</div>
         
     <form action="" method="post" class="login" id="login">
         <div class="conect" id="conect">
