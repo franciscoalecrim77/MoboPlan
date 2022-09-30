@@ -60,7 +60,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
     <section class="area-login">
         <div class="login">
             <div>
-                <img src="" alt="">
+                <img src="img/logo.png" alt="">
             </div>
         
 
@@ -70,7 +70,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
             <input type="submit" value="Login">
             </form>
 
-        <p>Não é cadastrado? <a href="cadastro.php">Clique aqui</a></p>
+            <p>Não é cadastrado? <a href="cadastro.php">Clique aqui</a></p>
                 
         </div>
     </section>
