@@ -14,7 +14,17 @@
 
 
 
+//projeto moboplan
+/*
 
+Pensar na inteligencia de cadastros
+Pensar nas informações necessarias para Cadastro.
+Reformulação do cadastro de novos clientes.
+
+Ajuste de layout
+
+
+*/
 
 
 

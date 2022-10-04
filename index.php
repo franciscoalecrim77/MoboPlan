@@ -10,10 +10,10 @@ setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 if(isset($_POST['email']) || isset($_POST['senha'])){
 
     if(strlen($_POST['email']) == 0){
-        echo"digite seu email";
+        echo"<script>alert('Digite o seu email!')</script>";
     } else if (strlen($_POST['senha']) == 0){
 
-        echo"Digite sua senha";
+        echo"<script>alert('Digite a sua senha!')</script>";
     } else {
 
         $email = $mysqli->real_escape_string($_POST['email']);
@@ -35,7 +35,11 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
             header("location: painel.php");
 
         }else {
-            echo "falha ao logar, E-mail ou senha incorretos";
+            
+      
+                
+                echo "<script>alert('Email ou senha incorretos! Tente novamente.');</script>";
+                
         }
     }
 

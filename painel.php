@@ -17,7 +17,6 @@ include('protect.php')
 
     <h1>Obrigado por acessar senhor(a) <?php echo $_SESSION['id']?></h1>
 
-    
         
     <div>
         <label for=""></label>
