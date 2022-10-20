@@ -1,5 +1,5 @@
 body{
-    background-color: #e2eded;
+    background-color:rgb(209, 252, 245);
     font-family: Arial, Helvetica, Sans-serif;
     overflow: hidden;
 }
@@ -8,7 +8,7 @@ body{
     display:flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 78vh;
     justify-content: center;
     align-items: center;
 }
@@ -20,7 +20,7 @@ body{
     background-color: #2382a5;
     width: 355px;
     height: 320px;
-    padding: 35px;
+    padding: 27px;
     border-radius: 15px;
 
 }
@@ -37,7 +37,7 @@ body{
     padding-left: 10px;
     
     border: none;
-    height: 45px;
+    height: 39px;
     outline: none;
     border-radius: 8px;
 }
@@ -65,6 +65,7 @@ form [type="submit"]{
 
 p{
     color: white;
+    margin: 8px;
 }
 
 a{

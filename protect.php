@@ -7,6 +7,6 @@ if(!isset($_SESSION)){
 
 if(!isset($_SESSION['id']))
 
-    die("Voce não pode acessar este conteudo, pois não esta logado. <p> <a href=\"index.php\">Entrar</a></p>")
+    die("Voce não pode acessar este conteudo, pois não esta logado. <p>")
 
 ?>
