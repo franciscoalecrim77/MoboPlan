@@ -25,8 +25,17 @@ $cadUsuarioDao->Validar($informacpf);
 foreach($cadUsuarioDao->Validar($informacpf) as $resultado):
   //  var_dump($resultado);
 endforeach;
+
+    if(strlen($_POST['nome']) == 0){
+        echo"<script>alert('Digite o seu nome!')</script>";
+} else if (strlen($_POST['datanasc']) == 0){
+
+    echo"<script>alert('Digite a sua data de nascimento!')</script>";}
+        if(strlen($_POST['cpf']) == ''){
+        echo"<script>alert('Digite o seu CPF!')</script>";
+} 
                
-    if((!empty($nome) && ($datanasc) && ($cpfajustado)) && $resultado == ''){
+    else if((!empty($nome) && ($datanasc) && ($cpfajustado)) && $resultado == ''){
 
         $usuario = new \app\model\cadUsuarios();
         $usuario->setNome($nome);
@@ -34,7 +43,8 @@ endforeach;
         $usuario->setCPF($cpfajustado);
         $cadUsuarioDao = new app\Model\cadUsuarioDao();
         $cadUsuarioDao->create($usuario);
-        echo "cadastro realizado com sucesso";
+        echo "<script>alert('Cadastro realizado com sucesso!')</script>";
+        echo "<script>alert('Voce sera redirecionado para o cadastro de credenciais')</script>";
                  
 
         }else{
