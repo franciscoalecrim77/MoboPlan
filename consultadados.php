@@ -1,5 +1,7 @@
 <?php
 
+/* Consulta dados de cadastro
+
 require_once 'vendor/autoload.php';
 
 
@@ -29,8 +31,33 @@ echo "</br>";
         $cadUsuarioDao->create($usuario);
 
 
-*/
+
+// Consulta dados do id e cpf para cadastro de operador
 
 
+require_once 'vendor/autoload.php';
 
+$cpf = 44013435810;
+$resultado = null;
+$informacpf = new \app\model\cadOperador();
+$informacpf->setCpf($cpf);
+$cadOperadorDao = new \app\model\cadOperadorDao(); 
+$cadOperadorDao->pegainfo($informacpf);
+foreach($cadOperadorDao->pegaInfo($informacpf) as $resultado):
+      print_r($resultado);
+      endforeach;
+
+echo '<hr>';
+
+$setaCpf = new \app\model\cadOperador();
+$setaCpf->setCpf($cpf);
+$cadOperadorDao = new \app\model\cadOperadorDao(); 
+$cadOperadorDao->pegaCpf($setaCpf);
+foreach($cadOperadorDao->pegaCpf($setaCpf) as $cpfrecolhido):
+      print_r($cpfrecolhido);
+      endforeach;     
+
+      */
+
+      
 ?>
