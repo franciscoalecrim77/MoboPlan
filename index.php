@@ -23,7 +23,7 @@
                         <li class="nav-item"><a class="nav-link" href="">Baixar CV!</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Contato</a></li>
                         <li class="nav-item"><a class="nav-link" href="">Sobre</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.php">Area Restrita</a></li>
+                        <li class="nav-item"><a class="nav-link" href="login2.php">Area Restrita</a></li>
                     </ul>
                 </div>
             </div>

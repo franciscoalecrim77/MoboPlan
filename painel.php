@@ -1,8 +1,9 @@
 <?php
 
 include __DIR__.'/includes/headerEcletica.php';
-include('protect.php')
-
+include('protect.php');
+$operadorLogado = new \app\model\cadOperador();
+$operadorLogado->setIdUsuario($_SESSION['id_usuario']);
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +18,7 @@ include('protect.php')
 <body>
 
 <div id="menubar">
+    <a href="logout.php">sair!</a>
   
     
 </body>

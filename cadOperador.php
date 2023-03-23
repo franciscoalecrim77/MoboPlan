@@ -8,25 +8,32 @@ date_default_timezone_set('America/Sao_Paulo');
 if ($_SERVER['REQUEST_METHOD'] == "POST"){
 
 $id = null;
+$idUsuario = null;
 $cpfrecolhido = null;
 $cpf =      (empty($_POST['cpf']))? false : $_POST['cpf'];
-$email =  (empty($_POST['email']))? false : $_POST['email'];
-$password =       (empty($_POST['password']))? false : $_POST['password'];
+$email =    (empty($_POST['email']))? false : $_POST['email'];
+$password = (empty($_POST['password']))? false : $_POST['password'];
 $cpfajuste = preg_replace('/[^0-9]/', '',$cpf);
 $cpfajustado = intval($cpfajuste);
 
-// print_r($cpfajustado);
-// print_r($email);
-// print_r($password);
 
-$cadoperador = new \app\model\cadOperadorDao;
 $informacpf = new \app\model\cadOperador();
 $informacpf->setcpf($cpfajustado);
+$informacpf->setIdUsuario($id);
 $cadOperadorDao = new \app\model\cadOperadorDao(); 
 $cadOperadorDao->pegainfo($informacpf);
       foreach($cadOperadorDao->pegaInfo($informacpf) as $id):
-      //var_dump($id);
+    //   var_dump($id);
       endforeach;
+      
+if($id == null){
+    $id = 0;
+}else{
+    $idUsuario = intval($id['id_usuario']);
+}
+      
+
+    //   var_dump($idUsuario);
 
 $setaCpf = new \app\model\cadOperador();
 $setaCpf->setCpf($cpfajustado);
@@ -37,28 +44,37 @@ $cadOperadorDao->pegaCpf($setaCpf);
       endforeach; 
 
 
-      if($id == ''){ //eu valido se o cpf do formulario consta no cadastro de usuarios;
-        Echo "Voce não esta cadastrado. Realize seu cadastro na tela anterior, antes de criar suas credenciais";
-      
 
+      if(strlen($_POST['cpf']) == ''){
+            echo"<script>alert('Digite o seu cpf!')</script>";
+      } else if (strlen($_POST['email']) == ''){
+            echo"<script>alert('Digite o seu email')</script>";}
+        else if(strlen($_POST['password']) == ''){
+            echo"<script>alert('Digite a sua senha')</script>";
+} 
+     else if($id == ''){ //eu valido se o cpf do formulario consta no cadastro de usuarios;
+           
+            echo"<script>alert('Voce não esta cadastrado. Realize seu cadastro na tela anterior, antes de criar suas credenciais')</script>";
+            
         
       }
         else if((!empty($cpfajustado) && ($email) && ($password)) && $cpfrecolhido == ''){
 
             $operador = new \app\model\cadOperador();
-            $operador->setidUsuario($id);
+            $operador->setidUsuario($idUsuario );
             $operador->setCpf($cpfajustado);
             $operador->setEmail($email);
             $operador->setPassword($password);
             $cadUsuarioDao = new app\Model\cadOperadorDao();
             $cadUsuarioDao->create($operador);
-            
-            echo "cadastro realizado com sucesso";
+
+            //print_r($operador);
+            echo"<script>alert('Cadastro Realizado com sucesso!')</script>";
             //var_dump($operador);
             
         
         }else{
-            Echo "voce ja esta cadastrado";
+            echo"<script>alert('Suas credenciais ja estão cadastradas em nossa base de dados')</script>";
         }
 
         //else if($id > 0){ //aqui eu validei que um login cadastrado para o cpf informado
