@@ -24,7 +24,8 @@ public function idSessao(validaLogin $is){
     $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
         return $resultado;
 }
-        
+
+
 }
 
 ?>

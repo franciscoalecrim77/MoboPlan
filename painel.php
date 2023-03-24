@@ -2,8 +2,21 @@
 
 include __DIR__.'/includes/headerEcletica.php';
 include('protect.php');
-$operadorLogado = new \app\model\cadOperador();
-$operadorLogado->setIdUsuario($_SESSION['id_usuario']);
+$usuarioLogado = intval($_SESSION['id']);
+
+require_once 'vendor/autoload.php';
+$operadorLogado = new \app\model\usuarioLogado();
+$operadorLogado->setIdUsuario($usuarioLogado);
+// $operadorLogadoDao = new \app\model\usuarioLogadoDao();
+$usuarioLogado = new \app\model\usuarioLogadoDao();
+$usuarioLogado->usuarioLogado($operadorLogado);
+foreach($usuarioLogado->usuarioLogado($operadorLogado) as $validado):
+  //print_r($validado);
+endforeach;
+
+echo "Seja bem vindo " . $validado['nome'] . ' !';
+
+
 ?>
 
 <!DOCTYPE html>
@@ -17,6 +30,7 @@ $operadorLogado->setIdUsuario($_SESSION['id_usuario']);
 </head>
 <body>
 
+<div><?php echo $validado['nome']?></div>
 <div id="menubar">
     <a href="logout.php">sair!</a>
   
