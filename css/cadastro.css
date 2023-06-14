@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+    body{
+        background-color:rgb(209, 252, 245);
+        font-family: Arial, Helvetica, Sans-serif;
+        overflow: hidden;
+    }
+
+
+/* .cadastro{
+    width: 100%;
+    color: rgb(187, 228, 247);
+    background-color: rgb(179, 205, 248);
+    height: 46px;
+} */
+/* .dados{
+    
+    background-color: red;
+    text-align: center;
+} */
+
+
+.dados{
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 10px;
+    
+    border: none;
+    height: 39px;
+    outline: none;
+    border-radius: 8px;
+}

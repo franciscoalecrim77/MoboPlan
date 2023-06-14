@@ -1,5 +1,8 @@
 <?php
+
+// include __DIR__.'/includes/headerEcletica.php';
 require_once 'vendor/autoload.php';
+
 
 setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
@@ -63,12 +66,16 @@ endforeach;
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href=".\css\cadastro.css">
 </head>
 <body>
 
-    <form action="" method="POST">
-    <div>
+<li>
+    <a href="index.php"><button class=""><img  src="img/ecletica.png"></button></a></li>
+<section class="cadastro">
+    <form class ="formulario" action="" method="POST">
+    <div class="dados">
         <label for=""> Seu Nome completo
             <input type="text" name="nome" id="nome">
         </label>
@@ -78,13 +85,15 @@ endforeach;
         <label for=""> CPF
             <input oninput="mascara(this)" type="text" name="cpf" id="cpf">
         </label>
+    </div> 
+    <div> 
         
-        <br></br>
         <label for=""> 
             <input type="submit" value="Cadastrar">
         </label>
-    </div>
+    </div> 
     </form>
+</section>
 </body>
 <script>
     function mascara(i){

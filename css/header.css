@@ -1,22 +1,105 @@
-*{
-    margin: 0px;
-    padding: 0px;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+*{    
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    background-color: rgb(227, 227, 248);
+}
+
+.header{
+    background-color: rgb(188, 253, 242);
+}
+
+.header .titulo{
+    text-align: center;
+    font-size: 28px;
+    position: relative;
+    margin-top: 9px;
+    height: 61px;
+    padding: 10px;
+    text-decoration: underline 2px;
     
 }
-body{
-    background-color: rgb(209, 252, 245);
+.header .logo{
+    height: 75px;
+    padding: 0px;
+    width: 200px;
+    margin-left: 10px;
+    float: left;
+    
 }
 
-.navbar{
-    width: 100%;
-    color: rgb(187, 228, 247);
-    background-color: rgb(179, 205, 248);
-    height: 46px;
+.header .usuario{
+    float: right;
+    margin-right: 10px;
 }
 
-.logo{
-    width: 30px;
-    height: 30px;
+.header .data{
+    margin-left: 5px;
+    float: left;
+    position: relative;
+    height: 10px;
 }
+
+.header .hora{
+    padding: 5px;
+    position: relative;
+    height: 10px;
+}
+.navegacao{
+    color: rgb(48, 17, 161);
+    background-color: rgb(149, 174, 255);    
+    padding: 10px;
+    text-align: left;
+    margin-top: 35px;             
+}
+
+.BotaoSair{
+    display: block;
+    float: left;
+    text-align: left;  
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    border-radius: 5px; 
+     
+}
+
+.menu{
+    list-style:none;
+    border:1px solid #c0c0c0;
+    float:left;
+}
+    
+.menu li{
+
+    position:relative;
+    float:left;
+    border-right:1px solid #c0c0c0;
+}
+.menu li a{color:#333; text-decoration:none; padding:5px 10px; display:block;}
+    
+    .menu li a:hover{
+    background:#333;
+    color:#fff;
+    -moz-box-shadow:0 3px 10px 0 #CCC;
+    -webkit-box-shadow:0 3px 10px 0 #ccc;
+    text-shadow:0px 0px 5px #fff;
+    }
+    
+    .menu li  ul{
+        position:absolute;
+        top:25px;
+        left:0;
+        background-color:#fff;
+        display:none;
+    }
+    
+    .menu li:hover ul, .menu li.over ul{display:block;}
+        
+    .menu li ul li{
+        border:1px solid #c0c0c0;
+        display:block;
+        width:150px;
+    }
