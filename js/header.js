@@ -15,8 +15,8 @@ function atualizaRelogio(){
     if (vminuto < 10){ vminuto = "0" + vminuto;}
     if (vsegundo < 10){ vsegundo = "0" + vsegundo;}
 
-    horaFormat = vhora + ":" + vminuto + ":" + vsegundo;
-    dataFormat = vdia + "/" + vmes + "/" + vano + " -";
+    horaFormat = " " + vhora + ":" + vminuto + ":" + vsegundo;
+    dataFormat = vdia + "/" + vmes + "/" + vano ;
 
     document.getElementById("hora").innerHTML = horaFormat;
     document.getElementById("data").innerHTML = dataFormat;

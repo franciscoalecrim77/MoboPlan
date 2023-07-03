@@ -99,7 +99,7 @@ if($validado == null){
     <section class="area-login">
         <div class="login">
             <div>
-                <img src="img/logo.png" alt="">
+                <img src="img/ecletica.png" alt="">
             </div>
         
 

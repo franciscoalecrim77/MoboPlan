@@ -35,37 +35,19 @@ endforeach;
     
     <header>
         <div class="header">
-            <img class="logo" src="img/pig.jpg" alt="a" >            
+            <img class="logo" src="img/ecletica.jpg" alt="a" >            
             <output id="hora" class="hora"></output>
-            <output id="data" class="data"> - </output>        
-            <p class="usuario"><?php echo "Seja bem vindo " . $validado['nome'] . ' ! ';?></p>
+            <output id="data" class="data"></output>        
+            <p class="usuario"><?php echo "Seja bem vindo - " . $validado['nome'] . ' ! ';?></p>
             <p class="titulo">Controle de ponto</p>
+            <a href="#" class="registrar">Registrar</a>
+            <a href="logout.php" class="BotaoSair">Sair</a>
 
         </div>
         
 		
     </header>
-           <nav>
-            <ul class="menu">
-                <li><a href="#">Cadastro</a>
-                    <ul>
-                        <li><a href="#">Acessos</a></li>
-                        <li><a href="#">Dados Pessoais</a></li>
-                        <li><a href="#">Design</a></li>
-                    </ul>
-                </li>
-                <li><a href="#">Relatórios</a>
-                    <ul>
-                        <li><a href="#">Banco de Horas</a></li>
-                        <li><a href="#">Registro de Ponto</a></li>
-                        <li><a href="#">Modelação</a></li>
-                    </ul>
-                </li>
-                <li class="BotaoSair"><a href="logout.php">Sair</a>
-                    
-                </li>
-            <ul>
-        </nav>
+           
 
         <div>
             <form action="" method="post">
