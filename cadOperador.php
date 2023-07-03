@@ -13,6 +13,7 @@ $cpfrecolhido = null;
 $cpf =      (empty($_POST['cpf']))? false : $_POST['cpf'];
 $email =    (empty($_POST['email']))? false : $_POST['email'];
 $password = (empty($_POST['password']))? false : $_POST['password'];
+$criptografada = base64_encode($password);
 $cpfajuste = preg_replace('/[^0-9]/', '',$cpf);
 $cpfajustado = intval($cpfajuste);
 
@@ -64,7 +65,7 @@ $cadOperadorDao->pegaCpf($setaCpf);
             $operador->setidUsuario($idUsuario );
             $operador->setCpf($cpfajustado);
             $operador->setEmail($email);
-            $operador->setPassword($password);
+            $operador->setPassword($criptografada);
             $cadUsuarioDao = new app\Model\cadOperadorDao();
             $cadUsuarioDao->create($operador);
 

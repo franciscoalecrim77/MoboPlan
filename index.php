@@ -14,7 +14,7 @@ $password = (empty($_POST['password']))? false : $_POST['password'];
 
 $credenciais = new \app\model\validaLogin();
 $credenciais->setEmail($email);
-$credenciais->setPassword($password);
+$credenciais->setPassword(base64_encode($password));
 $validaLoginDao = new \app\model\validaLoginDao();
 $validaLoginDao->validaLogin($credenciais);
 foreach($validaLoginDao->validaLogin($credenciais) as $validado):
