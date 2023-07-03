@@ -9,7 +9,7 @@ class cadOperador{
     private $cpfoperador;
 
     public function getIdUsuario(){
-            return $this->idUsuario;
+        return $this->idUsuario;
     }
     public function setIdUsuario($iu){
         $this->idUsuario = intval($iu);
@@ -36,7 +36,6 @@ class cadOperador{
     public function getCpfOperador(){
         return $this->cpfoperador;
     }
-
     public function setCpfOperador($co){
         $this->cpfoperador = intval($co);
     }
