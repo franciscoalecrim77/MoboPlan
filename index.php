@@ -33,10 +33,10 @@ if($validado == null){
 
 
     if(strlen($_POST['email']) == 0){
-    echo"<script>alert('Digite o seu nome!')</script>";
+    echo"<script>alert('Digite o seu Email!')</script>";
 
     }else if(strlen($_POST['password']) == 0){
-    echo"<script>alert('Digite o seu nome!')</script>";
+    echo"<script>alert('Digite a sua senha!')</script>";
 
 }else if($validado >= 1){   
     $usuarioLogado = $validado;
