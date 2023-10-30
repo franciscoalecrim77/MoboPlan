@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__.'/includes/header.php';
+// include __DIR__.'/includes/headerEcletica.php';
 require_once 'vendor/autoload.php';
 
 
@@ -60,34 +60,32 @@ endforeach;
  
 ?>
 
-<link rel="stylesheet" href="css/cadastro.css">
-
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href=".\css\cadastro.css">
+</head>
 <body>
+
 <li>
-    
+    <a href="index.php"><button class=""><img  src="img/ecletica.png"></button></a></li>
 <section class="cadastro">
     <form class ="formulario" action="" method="POST">
-        <div class="dados">
-            <label for=""> Seu Nome completo
-                <input type="text" name="nome" id="nome">
-            </label>
-            <label for=""> data de nascimento
-                <input type="date" name="datanasc" id="datanasc">
-            </label>
-            <label for=""> CPF
-                <input oninput="mascara(this)" type="text" name="cpf" id="cpf">
-            </label>
-            <label for=""> CEP
-                <input type="text" name="cep" id="cep">
-            </label>
-            <label for=""> Endereço
-                <input type="text" name="endereco" id="endereco">
-            </label>
-            <label for=""> Numero
-                <input type="number" name="numero" id="numero">
-            </label>
-
-        </div> 
+    <div class="dados">
+        <label for=""> Seu Nome completo
+            <input type="text" name="nome" id="nome">
+        </label>
+        <label for=""> data de nascimento
+            <input type="date" name="datanasc" id="datanasc">
+        </label>
+        <label for=""> CPF
+            <input oninput="mascara(this)" type="text" name="cpf" id="cpf">
+        </label>
+    </div> 
     <div> 
         
         <label for=""> 

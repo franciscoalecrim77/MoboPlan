@@ -40,7 +40,7 @@ endforeach;
             <output id="data" class="data"></output>        
             <p class="usuario"><?php echo "Seja bem vindo - " . $validado['nome'] . ' ! ';?></p>
             <p class="titulo">Controle de ponto</p>
-            <a href="#" class="registrar">Registrar</a>
+            <a href="registro.php" class="registrar">Registrar</a>
             <a href="logout.php" class="BotaoSair">Sair</a>
 
         </div>
