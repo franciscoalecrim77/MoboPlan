@@ -8,21 +8,15 @@ date_default_timezone_set('America/Sao_Paulo');
 $usuarioLogado = intval($_SESSION['id']);
 require_once 'vendor/autoload.php';
 
-// $operadorLogado = new \app\model\usuarioLogado();
-// $operadorLogado->setIdUsuario($usuarioLogado);
-// $operadorLogadoDao = new \app\model\usuarioLogadoDao();
-// $usuarioLogado = new \app\model\usuarioLogadoDao();
-// $usuarioLogado->usuarioLogado($operadorLogado);
-// foreach($usuarioLogado->usuarioLogado($operadorLogado) as $validado):
-//   print_r($validado);
-// endforeach;
 $data = date('d-m-Y');
 $hora = date('H:i:s');
+//criação objeto para pegar as informações do registro.
 $registro = new \app\model\insereRegistro();
 $registro->setusuarioLogado($usuarioLogado);
 $registro->setdata($data);
 $registro->setHora($hora);
 
+//Criação do objeto para inserir registro no banco. Utilização do Método "inserirRegistro" para inserção no banco de dados.
 $registra = new \app\model\insereRegistroDao();
 $registra->inserirRegistro($registro);
 
