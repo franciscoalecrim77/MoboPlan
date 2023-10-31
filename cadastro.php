@@ -67,12 +67,13 @@ endforeach;
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" href=".\css\cadastro.css">
+    <link rel="stylesheet" href="css\cadastro.css">
 </head>
 <body>
-
-<li>
-    <a href="index.php"><button class=""><img  src="img/ecletica.png"></button></a></li>
+    <header class="header">
+     <a href="index.php"><button class=""><img  src="img/ecletica.png"></button></a>
+      
+    </header>
 <section class="cadastro">
     <form class ="formulario" action="" method="POST">
     <div class="dados">

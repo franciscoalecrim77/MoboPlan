@@ -1,30 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/cadastro.css">
-    <title>Document</title>
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css\cadastro.css">
 </head>
 <body>
-    <form action="" method="post" class="formulario">
-
-    <label for="nome" class="label">nome
-        <input type="text" name="nome" id="nome">
-    </label>
-    <label for="telefone" class="label">Telefone
-        <input type="tel" name="nome" id="nome">
-    </label>
-    <label for="cep" class="label">cep
-        <input type="number" name="cep" id="nome">
-    </label>
-    <label for="telefone" class="label">Telefone
-        <input type="text" name="nome" id="nome">
-    </label>
-    <label for="telefone" class="label">Telefone
-        <input type="text" name="nome" id="nome">
-    </label>
+    <header class="header">
+     
+        <img class="logo" src="img/ecletica.jpg"></img>
+      
+    </header>
+<section class="cadastro">
+    <form class ="formulario" action="" method="POST">
+        <div class="dados">
+            <label for=""> Seu Nome completo
+                <input type="text" name="nome" id="nome">
+            </label>
+            <label for=""> data de nascimento
+                <input type="date" name="datanasc" id="datanasc">
+            </label>
+            <label for=""> CPF
+                <input oninput="mascara(this)" type="text" name="cpf" id="cpf">
+            </label>
+        </div> 
+    <div> 
+        
+        <label for=""> 
+            <input type="submit" value="Cadastrar">
+        </label>
+    </div> 
     </form>
+</section>
 </body>
+<script>
+    function mascara(i){
+   
+   var v = i.value;
+   
+   if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
+      i.value = v.substring(0, v.length-1);
+      return;
+   }
+   
+   i.setAttribute("maxlength", "14");
+   if (v.length == 3 || v.length == 7) i.value += ".";
+   if (v.length == 11) i.value += "-";
+
+}
+</script>
 </html>

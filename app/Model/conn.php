@@ -11,7 +11,7 @@ class conn{
     public static function getConn() {
 
     if(!isset(self::$instance)):
-        self::$instance = new \PDO('mysql:host=127.0.0.1;dbname=moboplan;port=3306','francisco','weagle');        
+        self::$instance = new \PDO('mysql:host=127.0.0.1;dbname=eponto;port=3306','francisco','weagle');        
     endif;
         return self::$instance;          
     }
