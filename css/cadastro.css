@@ -23,14 +23,36 @@ body{
 
 }
 
-.cadastro{
+.formulario{
     text-align: center;
-    height: 100px;
-    justify-content: center;
-    margin: 100px 100px;
+    margin: 10px;
 }
 
+.caixa{
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 18px;
+    margin: 10px;
+    height: 50px;
+    border-radius: 10px;
+    
+}
 
+.dadosBasicos{
+    font-size: 15px;
+   
+}
+
+.dadosBasicos .descricao{
+    font-weight: bold;
+    font-size: 14px;
+    margin: 16px;
+}
+
+.cadastrar{
+    padding: 10px;
+    text-align: right;
+}
 
        
    

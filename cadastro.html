@@ -15,23 +15,25 @@
     </header>
 <section class="cadastro">
     <form class ="formulario" action="" method="POST">
-        <div class="dados">
-            <label for=""> Seu Nome completo
-                <input type="text" name="nome" id="nome">
-            </label>
-            <label for=""> data de nascimento
-                <input type="date" name="datanasc" id="datanasc">
-            </label>
-            <label for=""> CPF
-                <input oninput="mascara(this)" type="text" name="cpf" id="cpf">
-            </label>
+        <fieldset class="caixa">
+            <legend>Dados Básicos</legend>
+                <div class="dadosBasicos">
+                    <label class="descricao" for=""> CPF:
+                        <input oninput="mascara(this)" type="text" name="cpf" id="cpf">
+                    </label>
+                    <label class="descricao" for=""> Nome Completo:
+                        <input type="text" name="nome" id="nome">
+                    </label>
+                    <label class="descricao" for=""> Data de Nascimento:
+                        <input type="date" name="datanasc" id="datanasc">
+                    </label>
+                </div> 
+        </fieldset>
+        <div class="cadastrar"> 
+                <label for=""> 
+                    <input type="submit" value="Cadastrar">
+                </label>
         </div> 
-    <div> 
-        
-        <label for=""> 
-            <input type="submit" value="Cadastrar">
-        </label>
-    </div> 
     </form>
 </section>
 </body>
