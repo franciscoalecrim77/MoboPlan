@@ -15,23 +15,57 @@
     </header>
 <section class="cadastro">
     <form class ="formulario" action="" method="POST">
-        <fieldset class="caixa">
+
+        <fieldset class="caixaBasico">
             <legend>Dados Básicos</legend>
+
                 <div class="dadosBasicos">
-                    <label class="descricao" for=""> CPF:
+                    <label class="" for=""> CPF:
                         <input oninput="mascara(this)" type="text" name="cpf" id="cpf">
                     </label>
-                    <label class="descricao" for=""> Nome Completo:
+                    <label class="" for=""> Nome Completo:
                         <input type="text" name="nome" id="nome">
                     </label>
-                    <label class="descricao" for=""> Data de Nascimento:
+                    <label class="" for=""> Data de Nascimento:
                         <input type="date" name="datanasc" id="datanasc">
+                    </label>
+                </div> 
+
+        </fieldset>
+
+
+        <fieldset class="caixaEndereco">
+            <legend>Dados de endereço</legend>
+                <div class="dadosEndereco">
+                    <label class="descricao" for=""> CEP:
+                        <input class="cep" type="text" name="cep" id="cep">
+                    </label>
+                    <label class="descricao" for=""> Logradouro:
+                        <input class="logradouro" type="text" name="logradouro" id="logradouro">
+                    </label>
+                    <label class="descricao" for=""> Endereço:
+                        <input class="endereco"type="text" name="endereco" id="endereco">
+                    </label>
+                    <label class="descricao" for=""> Numero:
+                        <input class="numero"type="text" name="numero" id="numero">
+                    </label>
+                    <label class="descricao" for=""> Bairro:
+                        <input class="bairro"type="text" name="bairro" id="bairro">
+                    </label>
+                    <label class="descricao" for=""> Cidade:
+                        <input class="cidade"type="text" name="cidade" id="cidade">
+                    </label>
+                    <label class="descricao" for=""> Estado:
+                        <input class="estado"type="text" name="estado" id="estado">
+                    </label>
+                    <label class="descricao" for=""> UF:
+                        <input class="uf"type="text" name="uf" id="uf">
                     </label>
                 </div> 
         </fieldset>
         <div class="cadastrar"> 
-                <label for=""> 
-                    <input type="submit" value="Cadastrar">
+                <label class="" for=""> 
+                    <input class="btn" type="submit" value="Cadastrar">
                 </label>
         </div> 
     </form>

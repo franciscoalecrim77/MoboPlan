@@ -6,7 +6,7 @@
 
 body{
     background-color: #ecf0f1;
-    box-sizing: border-box;
+    display: inline;
 }
 .header{
     height: 90px;
@@ -22,41 +22,90 @@ body{
     width: 167px;
 
 }
+.cadastro{
+    text-align: center;
+    align-items: center;
+}
 
 .formulario{
-    text-align: center;
-    margin: 10px;
-}
-
-.caixa{
-    font-weight: bolder;
-    padding: 10px;
-    font-size: 18px;
-    margin: 10px;
-    height: 50px;
-    border-radius: 10px;
     
+    margin: 0 auto;
+    max-width: 1000px;
+    box-sizing: border-box;
+    display: inline-grid;
+    padding: 10px;
+
 }
 
-.dadosBasicos{
-    font-size: 15px;
-   
+
+
+.cadastro .caixaBasico{
+    display: inline-block;
+    font-weight: 600;
+    border-radius: 10px;
+    margin-bottom: 19px;
+    padding: 20px;    
 }
 
-.dadosBasicos .descricao{
-    font-weight: bold;
-    font-size: 14px;
-    margin: 16px;
+.cadastro .caixaEndereco{
+    height: 100px;
+    font-weight: 600;
+    border-radius: 10px;
+    display: inline;
+}
+.descricao{
+    /* text-align: left; */
+    /* background-color: red; */
+    margin-right: 20px;
+}
+.dadosEndereco{
+    display: flex;
+    text-align: right;
+    flex-direction: row;
+    height: 60px;
+    margin: 10px 10px;
+    flex-wrap: wrap;
+    align-content: space-between;
+    align-items: flex-end;
+    justify-content: flex-start;
+}
+
+.cep{
+    width: 70px;
+    /* background-color: red; */
+}
+
+.logradouro{
+    width: 20px;
+}
+
+.endereco{
+    width: 200px;
+}
+.numero{
+    width: 70px;
+}
+
+.estado{
+    /* background-color: red; */
+}
+
+.uf{
+    width: 34px;
 }
 
 .cadastrar{
-    padding: 10px;
-    text-align: right;
+    display: inline-block;
+    margin-top: 10px;
+    /* background-color: red; */
+    text-align: left;
 }
 
-       
-   
-    
-    
-    
-   
+.btn{
+    font-size: 16px;
+    width: 100px;
+    padding: 9px;
+    background-color: #737373;
+    color: white;
+    border-radius: 10px;
+}
