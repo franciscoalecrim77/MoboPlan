@@ -6,6 +6,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="css\cadastro.css">
+        <!-- Adicionando Javascript -->
+        <script>
+    
+            function limpa_formulário_cep() {
+                    //Limpa valores do formulário de cep.
+                    document.getElementById('rua').value=("");
+                    document.getElementById('bairro').value=("");
+                    document.getElementById('cidade').value=("");
+                    document.getElementById('uf').value=("");
+                    // document.getElementById('ibge').value=("");
+                }
+                
+                function meu_callback(conteudo) {
+                    if (!("erro" in conteudo)) {
+                        //Atualiza os campos com os valores.
+                        document.getElementById('rua').value=(conteudo.logradouro);
+                        document.getElementById('bairro').value=(conteudo.bairro);
+                        document.getElementById('cidade').value=(conteudo.localidade);
+                        document.getElementById('uf').value=(conteudo.uf);
+                        switch (conteudo.uf) {
+                            case uf = "SP":
+                                document.getElementById('estado').value="São Paulo"
+                                break;
+                            case uf = "BA":  
+                                document.getElementById('estado').value="BAHIA"
+                                break;
+                            default:
+                                break;
+                        }
+                        // document.getElementById('ibge').value=(conteudo.ibge);
+                    } //end if.
+                else {
+                    //CEP não Encontrado.
+                    limpa_formulário_cep();
+                    alert("CEP não encontrado.");
+                }
+            }
+            
+            function pesquisacep(valor) {
+                
+                //Nova variável "cep" somente com dígitos.
+                var cep = valor.replace(/\D/g, '');
+        
+                //Verifica se campo cep possui valor informado.
+                if (cep != "") {
+        
+                    //Expressão regular para validar o CEP.
+                    var validacep = /^[0-9]{8}$/;
+        
+                    //Valida o formato do CEP.
+                    if(validacep.test(cep)) {
+        
+                        //Preenche os campos com "..." enquanto consulta webservice.
+                        document.getElementById('rua').value="...";
+                        document.getElementById('bairro').value="...";
+                        document.getElementById('cidade').value="...";
+                        document.getElementById('uf').value="...";
+                        // document.getElementById('ibge').value="...";
+                        
+                        //Cria um elemento javascript.
+                        var script = document.createElement('script');
+                        
+                        //Sincroniza com o callback.
+                        script.src = 'https://viacep.com.br/ws/'+ cep + '/json/?callback=meu_callback';
+        
+                        //Insere script no documento e carrega o conteúdo.
+                        document.body.appendChild(script);
+        
+                    } //end if.
+                    else {
+                        //cep é inválido.
+                        limpa_formulário_cep();
+                        alert("Formato de CEP inválido.");
+                    }
+                } //end if.
+                else {
+                    //cep sem valor, limpa formulário.
+                    limpa_formulário_cep();
+                }
+            };
+        
+            </script>
 </head>
 <body>
     <header class="header">
@@ -14,7 +96,7 @@
       
     </header>
 <section class="cadastro">
-    <form class ="formulario" action="" method="POST">
+    <form class ="formulario" action="." method="post">
 
         <fieldset class="caixaBasico">
             <legend>Dados Básicos</legend>
@@ -38,28 +120,28 @@
             <legend>Dados de endereço</legend>
                 <div class="dadosEndereco">
                     <label class="descricao" for=""> CEP:
-                        <input class="cep" type="text" name="cep" id="cep">
-                    </label>
-                    <label class="descricao" for=""> Logradouro:
-                        <input class="logradouro" type="text" name="logradouro" id="logradouro">
+                        <input class="cep" type="text" id="cep" value="" onblur="pesquisacep(this.value)">
                     </label>
                     <label class="descricao" for=""> Endereço:
-                        <input class="endereco"type="text" name="endereco" id="endereco">
+                        <input class="endereco"type="text" name="rua" id="rua">
                     </label>
                     <label class="descricao" for=""> Numero:
                         <input class="numero"type="text" name="numero" id="numero">
                     </label>
+                    <label class="descricao" for=""> Complemento:
+                        <input class="complemento" type="text" name="complemento" id="complemento">
+                    </label>
                     <label class="descricao" for=""> Bairro:
-                        <input class="bairro"type="text" name="bairro" id="bairro">
+                        <input class="bairro" type="text" name="bairro" id="bairro">
                     </label>
                     <label class="descricao" for=""> Cidade:
                         <input class="cidade"type="text" name="cidade" id="cidade">
                     </label>
                     <label class="descricao" for=""> Estado:
-                        <input class="estado"type="text" name="estado" id="estado">
+                        <input class="estado" type="text" name="estado" id="estado">
                     </label>
                     <label class="descricao" for=""> UF:
-                        <input class="uf"type="text" name="uf" id="uf">
+                        <input class="uf" type="text" name="uf" id="uf">
                     </label>
                 </div> 
         </fieldset>
@@ -86,5 +168,8 @@
    if (v.length == 11) i.value += "-";
 
 }
+
+
+
 </script>
 </html>
