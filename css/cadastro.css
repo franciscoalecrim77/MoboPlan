@@ -72,24 +72,34 @@ body{
 
 .cep{
     width: 70px;
+    text-align: center;
     /* background-color: red; */
 }
 
 .logradouro{
     width: 20px;
+    text-align: center;
+}
+
+.bairro{
+    width:150px;
 }
 
 .endereco{
     width: 200px;
+    text-align: left;
 }
 .numero{
-    width: 70px;
+    width: 50px;
 }
 
 .estado{
     /* background-color: red; */
+    width: 120px;
 }
-
+.cidade{
+    width: 100px;
+}
 .uf{
     width: 34px;
 }
