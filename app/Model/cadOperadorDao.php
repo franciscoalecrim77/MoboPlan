@@ -16,7 +16,7 @@ public function create(CadOperador $co){
     }
 
     public function pegainfo(cadOperador $pi){
-        $sql = 'SELECT id_usuario from usuarios where cpf = ?';
+        $sql = 'SELECT id_usuario from cad_usuarios where cpf = ?';
         $stmt = Conn::getConn()->prepare($sql);
         $stmt->bindValue(1, $pi->getcpf());
         $stmt->execute();
