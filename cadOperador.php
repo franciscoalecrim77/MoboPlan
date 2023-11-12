@@ -24,7 +24,7 @@ $informacpf->setIdUsuario($id);
 $cadOperadorDao = new \app\model\cadOperadorDao(); 
 $cadOperadorDao->pegainfo($informacpf);
       foreach($cadOperadorDao->pegaInfo($informacpf) as $id):
-    //   var_dump($id);
+       var_dump($id);
       endforeach;
       
 if($id == null){
@@ -93,8 +93,10 @@ $cadOperadorDao->pegaCpf($setaCpf);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro operador</title>
+    <link rel="icon" type="image/x-icon" href="./img/favicon-32x32.png">
 </head>
 <body>
+    
     <form action="" method="post">
     <div>
         <div>
