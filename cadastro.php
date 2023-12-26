@@ -24,22 +24,23 @@ $estado =      (empty($_POST['estado']))? false : $_POST['estado'];
 $uf =          (empty($_POST['uf']))? false : $_POST['uf'];
 
 
-
+$ativo = "S";
+$categoria = 1;
 
 $cpfajuste = preg_replace('/[^0-9]/', '',$cpf);
 $cpfajustado = intval($cpfajuste);
 
  
-$informacpf = new \app\model\cadUsuarios();
+$informacpf = new \app\model\CadPessoas();
 $informacpf->setcpf($cpfajustado);
-$cadUsuarioDao = new \app\model\cadUsuarioDao(); 
-$cadUsuarioDao->Validar($informacpf);
+$cadPessoasDao = new \app\model\cadPessoasDao(); 
+$cadPessoasDao->Validar($informacpf);
 
-foreach($cadUsuarioDao->Validar($informacpf) as $resultado):
+foreach($cadPessoasDao->Validar($informacpf) as $resultado):
 endforeach;
 
     if($resultado['cpf'] == $cpfajustado){
-        $consulta = new \app\model\cadUsuarios();
+        $consulta = new \app\model\cadPessoas();
         $consulta->setNome($resultado['nome']);
         //echo "<script>alert('teste')</script>";
         // echo "<pre>";
@@ -48,21 +49,38 @@ endforeach;
 
     if((!empty($nome) && ($datanasc) && ($cpfajustado)) && $resultado == ''){
 
-        $usuario = new \app\model\cadUsuarios();
-        $usuario->setNome($nome);
-        $usuario->setdataNasc($datanasc);
-        $usuario->setCPF($cpfajustado);
-        $usuario->setCep($cep);
-        $usuario->setRua($rua);
-        $usuario->setNumero($numero);
-        $usuario->setComplemento($complemento);
-        $usuario->setBairro($bairro);
-        $usuario->setCidade($cidade);
-        $usuario->setEstado($estado);
-        $usuario->setUf($uf);
-       
-        $cadUsuarioDao = new app\Model\cadUsuarioDao();
-        $cadUsuarioDao->create($usuario);
+        $pessoa = new \app\model\cadPessoas();
+        $pessoa->setNome($nome);
+        $pessoa->setdataNasc($datanasc);
+        $pessoa->setCPF($cpfajustado);
+        $pessoa->setCategoria($categoria);
+        $pessoa->setAtivo($ativo);        
+        $cadPessoasDao = new app\Model\cadPessoasDao();
+        $cadPessoasDao->create($pessoa);
+        
+        $id_pessoa_consulta = new \app\model\cadPessoasDao(); 
+        $id_pessoa_consulta->pegaId($informacpf);
+
+        foreach($id_pessoa_consulta->pegaId($informacpf) as $id_novo):
+            $id_tratado = $id_novo['id'];
+            // echo "<pre>";
+            // var_dump($id_tratado);
+        endforeach;
+
+        $enderecoPessoa = new \app\model\cadEnderecos();
+        $enderecoPessoa->setPessoaId($id_tratado);
+        $enderecoPessoa->setCep($cep);
+        $enderecoPessoa->setEndereco($rua);
+        $enderecoPessoa->setNumero($numero);
+        $enderecoPessoa->setComplemento($complemento);
+        $enderecoPessoa->setBairro($bairro);
+        $enderecoPessoa->setCidade($cidade);
+        $enderecoPessoa->setEstado($estado);
+        $enderecoPessoa->setUf($uf);
+
+        $enderecoPessoacadastro = new \app\model\cadEnderecosDao();
+        $enderecoPessoacadastro->createEndereco($enderecoPessoa);
+
         echo "<script>alert('Cadastro realizado com sucesso!')</script>";
         //echo "<script>alert('Voce sera redirecionado para o cadastro de credenciais')</script>";
                  

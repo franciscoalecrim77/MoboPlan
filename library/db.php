@@ -3,7 +3,7 @@
 $host = '127.0.0.1';
 $user = "francisco";
 $password = "weagle";
-$db = "eponto";
+$db = "desenvolvimento";
 //$port = "3308";
 
 $mysqli = new mysqli($host, $user, $password, $db);

@@ -7,7 +7,7 @@ class validaLoginDao{
 
 public function validaLogin(validaLogin $vL){     
 
-    $sql = 'SELECT id_usuario, email, senha FROM cad_operadores where email = ? and senha = ?';
+    $sql = 'SELECT pessoa_id, email, senha FROM usuarios where email = ? and senha = ?';
     $stmt = Conn::getConn()->prepare($sql);
     $stmt->bindValue(1, $vL->getEmail());
     $stmt->bindValue(2, $vL->getPassword());
@@ -17,7 +17,7 @@ public function validaLogin(validaLogin $vL){
 }
 
 public function idSessao(validaLogin $is){
-    $sql = 'SELECT id_usuario from cad_operadores where email = :?';
+    $sql = 'SELECT pessoa_id from usuarios where email = :?';
     $stmt = Conn::getConn()->prepare($sql);
     $stmt->bindValue(1, $is->getIdUsuario());
     $stmt->execute();

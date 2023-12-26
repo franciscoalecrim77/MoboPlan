@@ -18,30 +18,31 @@ $cpfajuste = preg_replace('/[^0-9]/', '',$cpf);
 $cpfajustado = intval($cpfajuste);
 
 
-$informacpf = new \app\model\cadOperador();
-$informacpf->setcpf($cpfajustado);
-$informacpf->setIdUsuario($id);
-$cadOperadorDao = new \app\model\cadOperadorDao(); 
+$informacpf = new \app\model\cadUsuario();
+$informacpf->setCpf($cpfajustado);
+// $informacpf->setPessoaId($id);
+echo "<pre>";
+var_dump($informacpf);
+$cadOperadorDao = new \app\model\cadUsuarioDao(); 
 $cadOperadorDao->pegainfo($informacpf);
       foreach($cadOperadorDao->pegaInfo($informacpf) as $id):
        var_dump($id);
       endforeach;
       
-if($id == null){
-    $id = 0;
-}else{
-    $idUsuario = intval($id['id_usuario']);
-}
-      
+    if($id == null){
+        $id = 0;
+    }else{
+        $idUsuario = intval($id['id']);
 
-    //   var_dump($idUsuario);
+    }
 
-$setaCpf = new \app\model\cadOperador();
+$setaCpf = new \app\model\cadUsuario();
 $setaCpf->setCpf($cpfajustado);
-$cadOperadorDao = new \app\model\cadOperadorDao(); 
+$cadOperadorDao = new \app\model\cadUsuarioDao(); 
 $cadOperadorDao->pegaCpf($setaCpf);
       foreach($cadOperadorDao->pegaCpf($setaCpf) as $cpfrecolhido):
-      //print_r($cpfrecolhido);
+      var_dump($cpfrecolhido);
+
       endforeach; 
 
 
@@ -61,17 +62,18 @@ $cadOperadorDao->pegaCpf($setaCpf);
       }
         else if((!empty($cpfajustado) && ($email) && ($password)) && $cpfrecolhido == ''){
 
-            $operador = new \app\model\cadOperador();
-            $operador->setidUsuario($idUsuario );
+            $operador = new \app\model\cadUsuario();
+            $operador->SetPessoaId($idUsuario);
             $operador->setCpf($cpfajustado);
             $operador->setEmail($email);
             $operador->setPassword($criptografada);
-            $cadUsuarioDao = new app\Model\cadOperadorDao();
+            $operador->setAtivo("S");
+            $cadUsuarioDao = new app\Model\cadUsuarioDao();
             $cadUsuarioDao->create($operador);
-
-            //print_r($operador);
+            // echo "<pre>";
+            // print_r($operador);
             echo"<script>alert('Cadastro Realizado com sucesso!')</script>";
-            //var_dump($operador);
+            // var_dump($operador);
             
         
         }else{

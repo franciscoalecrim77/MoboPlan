@@ -7,10 +7,10 @@ setlocale(LC_ALL, "pt_BR", "pt_BR.utf-8", "portuguese");
 date_default_timezone_set('America/Sao_Paulo');
 
 function retorna($cpf, $mysqli){
-    $result_analista = "select * from cad_usuarios where cpf = '$cpf' limit 1";
+    $result_analista = "select * from pessoas where cpf = '$cpf'";
     $resultado_analista = mysqli_query($mysqli, $result_analista);
-    if($resultado_analista->num_rows){
-        $row_analista = mysqli_fetch_assoc($resultado_analista);
+    if($resultado_analista->num_rows > 0){
+        $row_analista = mysqli_fetch_array($resultado_analista);
         $valores['nome'] = $row_analista['nome'];
         $valores['data_nasc'] = $row_analista['data_nasc'];
         $valores['cep'] = $row_analista['cep'];

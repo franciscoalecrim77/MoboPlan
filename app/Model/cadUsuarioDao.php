@@ -1,62 +1,46 @@
 <?php
 
-
-
 namespace app\Model;
+
 class cadUsuarioDao{
 
-    //public $res;
-    
-    public function create(CadUsuarios $cd){
-        $sql = 'INSERT INTO cad_usuarios (nome, data_nasc, cpf, cep, endereco, numero, complemento, bairro, cidade, estado, uf) VALUES (?,?,?,?,?,?,?,?,?,?,?)';
+    public function create(CadUsuario $co){
+        $sql = 'INSERT INTO usuarios (pessoa_id, cpf, email, senha, ativo) VALUES (?,?,?,?,?)';
         $stmt = Conn::getConn()->prepare($sql);       
-        $stmt->bindValue(1, $cd->getNome());
-        $stmt->bindValue(2, $cd->getdataNasc());
-        $stmt->bindValue(3, $cd->getCPF());
-        $stmt->bindValue(4, $cd->getCep());
-        $stmt->bindValue(5, $cd->getRua());
-        $stmt->bindValue(6, $cd->getNumero());
-        $stmt->bindValue(7, $cd->getComplemento());
-        $stmt->bindValue(8, $cd->getBairro());
-        $stmt->bindValue(9, $cd->getCidade());
-        $stmt->bindValue(10, $cd->getEstado());
-        $stmt->bindValue(11, $cd->getUf());
-
+        $stmt->bindValue(1, $co->getPessoaId());
+        $stmt->bindValue(2, $co->getCpf());
+        $stmt->bindValue(3, $co->getEmail());
+        $stmt->bindValue(4, $co->getPassword());
+        $stmt->bindValue(5, $co->getAtivo());  
         $stmt->execute();
         
     }
 
-    public function Validar(cadUsuarios $c){
-            
-            //$sql = 'SELECT * FROM usuarios where cpf = ?';
-            $sql = 'SELECT * FROM cad_usuarios where cpf = ?';
-            $stmt = Conn::getConn()->prepare($sql);  
-            $stmt->bindValue(1, $c->getCPF());
-            $stmt->execute();
-            $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
-                return $resultado;
-            
-            
-            /*if($stmt->rowCount() > 1):
-                $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
-                return $resultado;
-            endif;*/
-            
-                                    
-    }
-
-   public function consulta(){
-        $sql = 'SELECT * FROM cad_usuarios';
+    public function pegainfo(CadUsuario $pi){
+        $sql = 'SELECT id from pessoas where cpf = ?';
         $stmt = Conn::getConn()->prepare($sql);
+        $stmt->bindValue(1, $pi->getcpf());
         $stmt->execute();
         $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
         return $resultado;
-   }
+        
+    }
+    public function pegaCpf(cadUsuario $pc){
+        $sql = 'SELECT cpf from usuarios where cpf = ?';
+        $stmt = Conn::getConn()->prepare($sql);
+        $stmt->bindValue(1, $pc->getCpf());
+        $stmt->execute();
+        $consulta = $stmt->fetchALL(\PDO::FETCH_ASSOC);
+        return $consulta;
+    }
+
+    public function pegaId(cadUsuario $pid){
+        $sql = 'SELECT cpf from usuarios where cpf = ?';
+        $stmt = Conn::getConn()->prepare($sql);
+        $stmt->bindValue(1, $pid->getCpf());
+        $stmt->execute();
+        $consulta = $stmt->fetchALL(\PDO::FETCH_ASSOC);
+        return $consulta;
+    }
 }
-
-//$cmd = new cadUsuarioDao;
-//$conn = new Conn;
-//$cmd->Validar();
-//var_dump($cmd);
 ?>
-

@@ -1,18 +1,19 @@
 <?php
 
 namespace app\Model;
-class cadOperador{
-    private $idUsuario;
+class cadUsuario{
+    private $pessoaId;
+    private $cpf;
     private $email;
     private $password;
-    private $cpf;
+    private $ativo;
     private $cpfoperador;
 
-    public function getIdUsuario(){
-        return $this->idUsuario;
+    public function getPessoaId(){
+        return $this->pessoaId;
     }
-    public function setIdUsuario($iu){
-        $this->idUsuario = intval($iu);
+    public function setPessoaId($pi){
+        $this->pessoaId = intval($pi);
     }
     public function getCpf(){
         return $this->cpf;
@@ -20,6 +21,7 @@ class cadOperador{
     public function setCpf($cpf){
         $this->cpf = intval($cpf);
     }
+    
     public function getEmail(){
         return $this->email;
     }
@@ -33,6 +35,12 @@ class cadOperador{
     $this->password = $pw;
     }
 
+    public function getAtivo(){
+        return $this->ativo;
+    }
+    public function setAtivo($ativo){
+        $this->ativo = $ativo;
+    }
     public function getCpfOperador(){
         return $this->cpfoperador;
     }

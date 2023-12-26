@@ -19,13 +19,13 @@ $credenciais->setPassword(base64_encode($password));
 $validaLoginDao = new \app\model\validaLoginDao();
 $validaLoginDao->validaLogin($credenciais);
 foreach($validaLoginDao->validaLogin($credenciais) as $validado):
-  //print_r($validado);
+//   var_dump($validado);
 endforeach;
 
 if($validado == null){
     $validado == 0;
 }else{
-    $idUsuario = $validado['id_usuario'];
+    $idUsuario = $validado['id'];
 }
 // $idUsuario = $validado['id_usuario'];
 
@@ -45,7 +45,7 @@ if($validado == null){
     
     session_start();
     
-    $_SESSION['id'] = $validado['id_usuario'];
+    $_SESSION['id'] = $validado['pessoa_id'];
 
     header("location: gerencial.php");
     exit;
