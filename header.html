@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eponto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/header.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.2.js"></script>
+    <script type="text/javascript">
+        jQuery(window).load(function($){
+            atualizaRelogio();  
+        });
+    </script>
+    
+    <link rel="stylesheet" href="./css/header.css">
+</head>
+<body>
+    <header class="container-fluid p-1 bg-ecletica">
+
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-8">
+                                <div class="row d-flex align-items-center">
+                                    <div class="col-2">
+                                        <img src="./img/ecletica.jpg" class="img-thumbnail" alt="...">
+                                    </div>
+                                    <div class="col text-center" style="color: white; font-weight: bold;" >
+                                        <h3>Sistema gerenciador de Ponto Eletronico</h3>
+                                    </div>
+                                </div> 
+                        </div>
+                        <div class="col-3">
+                            <div class="row mb-1">
+                                <div class="col" style="color: white; font-weight: bold; font-size: 15px;">Empresa: PrestSoft Soluções em informática</div>
+                            </div>
+                            <div class="row mb-3">
+                                <div class="col-5" style="color: white; font-weight: bold; font-size: 15px;">Cnpj: 02.143.500/0001-08</div>
+                                <div class="col-5"style="color: white; font-weight: bold; font-size: 15px;">
+                                    <output id="hora" class="hora"></output> - <output id="data" class="data"></output> 
+                                </div>   
+                            </div>
+                            <div class="row d-flex align-items-end"style="color: white; font-weight: bold; font-size: 20px;">
+                                <div class="col">Usuario logado: Francisco Alecrim Tamberi</div>                            
+                            </div>
+
+                        </div>
+                        <div class="col d-flex">
+                            <div class="row align-items-center">
+                                
+                                    <button type="button" class="btn btn-ecletica btn-lg">Registrar</button>
+                                    <!-- <a href="registro.php" class="registrar">Registrar</a> -->
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+    </header>
+<div class="container-fluid" style="position: fixed; bottom: 0; background-color: aqua;">
+    <footer class="row d-flex align-items-end border-top">
+        <div class="col p-2">
+            Desenvolvido por AT projetos LTDA
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>

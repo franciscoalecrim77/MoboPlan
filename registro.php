@@ -1,7 +1,5 @@
 <?php
 
-//include 'library/db.php';
-
 use app\Model\usuarioLogado;
 
 include('protect.php');
@@ -17,14 +15,11 @@ $data = date('d-m-Y H:i:s');
 $registro = new \app\model\insereRegistro();
 $registro->setusuarioLogado($usuarioLogado);
 $registro->setdata($data);
-// var_dump($registro);
 
 //Criação do objeto para inserir registro no banco. Utilização do Método "inserirRegistro" para inserção no banco de dados.
 $registra = new \app\model\insereRegistroDao();
 $registra->inserirRegistro($registro);
 
 // header("location: gerencial.php");
-
-
 
 ?>

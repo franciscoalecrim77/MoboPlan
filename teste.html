@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        var inputSegundo = 11503;
+        var minuto = parseInt((inputSegundo % 3600) / 60) ;
+        var segundo = parseInt(inputSegundo % 60);
+
+        var minutoFormatado = minuto < 10 ? '0' + minuto : minuto;
+        var segundoFormatado = segundo < 10 ? '0' + segundo : segundo;
+
+        alert(minutoFormatado + ':' + segundoFormatado);
+    </script>
+</body>
+</html>

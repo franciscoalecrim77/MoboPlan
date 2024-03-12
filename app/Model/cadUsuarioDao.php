@@ -13,7 +13,6 @@ class cadUsuarioDao{
         $stmt->bindValue(4, $co->getPassword());
         $stmt->bindValue(5, $co->getAtivo());  
         $stmt->execute();
-        
     }
 
     public function pegainfo(CadUsuario $pi){
@@ -23,7 +22,6 @@ class cadUsuarioDao{
         $stmt->execute();
         $resultado = $stmt->fetchALL(\PDO::FETCH_ASSOC);
         return $resultado;
-        
     }
     public function pegaCpf(cadUsuario $pc){
         $sql = 'SELECT cpf from usuarios where cpf = ?';
@@ -33,7 +31,6 @@ class cadUsuarioDao{
         $consulta = $stmt->fetchALL(\PDO::FETCH_ASSOC);
         return $consulta;
     }
-
     public function pegaId(cadUsuario $pid){
         $sql = 'SELECT cpf from usuarios where cpf = ?';
         $stmt = Conn::getConn()->prepare($sql);

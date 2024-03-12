@@ -1,88 +1,20 @@
-*{    
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto', sans-serif;
-}
 
 body{
     background-color: #ecf0f1;
-    box-sizing: border-box;
 }
-
-.header{
-    height: 90px;
-    width: 100%;
-    display: inline-block;
+.bg-ecletica{
     background-color: #2980b9;
-    
 }
 
-.header .titulo{
+
+.btn-ecletica{
+    background-color: gray;
     color: white;
-    font-size: 30px;
-   
-    text-align: center;
-    
-}
-.header .logo{
-    display: inline-block;
-    height: 89px;
-    clear: both;
-    width: 167px;
-    float: left;
-    
+    /* font-weight: bold; */
 }
 
-.header .usuario{
-        /* color: white; */
-        margin-top: 10px;
-        font-size: 1.0rem;
-        text-align: right;
-        margin-right: 10px;
-}
-
-.header .data{
-    margin-top: 10px;
-    margin-left: 5px;
-    float: left;
-    position: relative;
-    
-}
-
-.header .hora{
-    margin-top: 10px;
-    margin-left: 5px;
-    float: left;
-    position: relative;
-    
-}
-
-.registrar{
-    display: inline;
-    text-decoration: none;
-    padding: 7px;
-    margin: -10px 0px 0px 10px;
-    float: left;
-    text-align: center;
-    background-color: white;
-    border: blue solid 3px;
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    border-radius: 5px;
-}
-.BotaoSair{
-    display: inline-block;
-    text-decoration: none;
-    margin-right: 10px;
-    padding: 7px;
-    width: 40px;
-    margin-top: -10px;
-    /* height: 20px; */
-    float: right;
-    text-align: center;
-    background-color: white;
-    border: blue solid 3px;
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    border-radius: 5px;
+.btn-ecletica:hover{
+    background-color:#024a7a;
+    color: white;
+    font-weight: bold;
 }

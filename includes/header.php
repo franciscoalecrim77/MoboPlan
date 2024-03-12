@@ -42,7 +42,6 @@ endforeach;
             <p class="titulo">Controle de ponto</p>
             <a href="registro.php" class="registrar">Registrar</a>
             <a href="logout.php" class="BotaoSair">Sair</a>
-
         </div>
         
 		
